@@ -5,6 +5,7 @@ import {FiEdit} from 'react-icons/fi';
 import store from '../../redux/store';
 import './post.css';
 import fetchData from '../../actions/data';
+import dataDiffCalculator from '../../assets/datacalculator';
 
 const PostItem = ({setupdate, post}) => {
     const {name} = store.getState();
@@ -33,7 +34,6 @@ const PostItem = ({setupdate, post}) => {
         });
         setupdate(e=>!e);
     }
-   
     return  <article className='content-post-item'>
                 <div className='content-post-border'>
                     <div className='header-post-item'>
@@ -48,7 +48,7 @@ const PostItem = ({setupdate, post}) => {
                                     </span>
                                     <span 
                                         onClick={editeHandler}
-                                        >
+                                    >
                                             <FiEdit/>
                                     </span>  
                                 </div> : ''}
@@ -56,7 +56,7 @@ const PostItem = ({setupdate, post}) => {
                     <div className='body-post-item'>
                         <div className='body-post-header'>
                             <span>{`@${post.username}`}</span>
-                            <span>25 minutes ago</span>
+                            <span>{dataDiffCalculator(post.created_datetime)}</span>
                         </div>
                         <div className='content-post'>
                             <p>

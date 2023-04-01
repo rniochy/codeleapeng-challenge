@@ -1,4 +1,4 @@
-export default function dataCalculator(postData_){
+export default function dataDiffCalculator(postData_){
     const atualData = new Date();
     const postData = new Date(postData_)
 
@@ -7,18 +7,19 @@ export default function dataCalculator(postData_){
     const timeInOneSecond = 1000; 
     const timeInOneMinutes = 1000 * 60; 
     const timeInOneHour = 1000 * 60* 60; 
-    const timeInOneDay = 1000 * 60* 24; 
-    const timeInOneWeek = 1000 * 60* 24*7; 
-    const timeInOneYear = 1000 * 60* 24*365; 
+    const timeInOneDay = 1000 * 60* 60*  24; 
+    const timeInOneWeek = 1000 * 60* 60*  24*7; 
+    const timeInOneYear = (1000 * 60* 60* 24*365); 
 
     const dataDiffSecond = Math.floor(dataDiff/timeInOneSecond);
     const dataDiffMinutes = Math.floor(dataDiff/timeInOneMinutes);
     const dataDiffHour = Math.floor(dataDiff/timeInOneHour);
     const dataDiffDay = Math.ceil(dataDiff/timeInOneDay);
     const dataDiffWeek = Math.floor(dataDiff/timeInOneWeek);
-    const dataDiffYear = Math.floor(dataDiff/timeInOneYear);
+    const dataDiffYear = Math.floor(dataDiff/(timeInOneYear));
 
-    
+    console.log(dataDiff)
+
     if(dataDiffYear > 0)
         return `${dataDiffYear} Year(s) ago`;
     else if(dataDiffWeek > 0 )
