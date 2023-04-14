@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import Signup from '../src/pages/signup'
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   // AiTwotoneDelete AiOutlineDelete FiEdit
 
   return (
     <div className="App">
-     
+      <Signup />
     </div>
   )
 }

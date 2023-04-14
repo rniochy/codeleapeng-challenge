@@ -1,12 +1,9 @@
 import React from 'react';
+import CreateItem from '../../components/createItem';
 import "./signup.css"
 
 const Signup = () => {
-    return (
-        <div>
-            Signup
-        </div>
-    );
+    return <CreateItem />
 }
 
 export default Signup;
