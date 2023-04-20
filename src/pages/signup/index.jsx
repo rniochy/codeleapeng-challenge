@@ -6,21 +6,23 @@ import "./signup.css";
 
 const Signup = () => {
     const [name, setName] = useState('');
+    const [logged, setLogged] = useState(false);
 
     const enterHandler = () => {
+         setLogged(true);
          store.dispatch({
              type: actions.LOGIN,
-             payload: {name}
+             payload: {name, logged}
          });
+         console.log(store.getState())
     }
     const enterInput = (e) => {
          setName(e.target.value);
-         console.log(`${name}`.length )
     }
 
     const enableButtonToggle =()=>{
         if(`${name}`.length-1 < 2) return true;
-         return false
+         return false;
     }
 
     return (

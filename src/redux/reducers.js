@@ -5,7 +5,8 @@ export default function reducer(store = [], action){
     switch(action.type){
         case actions.LOGIN:
             return {
-                 ...store, name: action.payload.name
+                 ...store, name: action.payload.name,
+                 logged: action.payload.logged
             }
     }
     return store;
