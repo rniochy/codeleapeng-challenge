@@ -4,17 +4,14 @@ import store from '../../redux/store';
 import "./signup.css";
 
 
-const Signup = () => {
-    const [name, setName] = useState('');
-    const [logged, setLogged] = useState(false);
-
+const Signup = ({logged, setLogged, name, setName}) => {
+    
     const enterHandler = () => {
          setLogged(true);
          store.dispatch({
              type: actions.LOGIN,
              payload: {name, logged}
          });
-         console.log(store.getState())
     }
     const enterInput = (e) => {
          setName(e.target.value);
