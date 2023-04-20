@@ -5,7 +5,7 @@ import "./signup.css";
 
 
 const Signup = () => {
-    const [name, setName] = useState();
+    const [name, setName] = useState('');
 
     const enterHandler = () => {
          store.dispatch({
