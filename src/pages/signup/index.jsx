@@ -18,13 +18,18 @@ const Signup = () => {
          console.log(`${name}`.length )
     }
 
+    const enableButtonToggle =()=>{
+        if(`${name}`.length-1 < 2) return true;
+         return false
+    }
+
     return (
         <div className='signup-content'>
             <h2>Welcome to CodeLeap network!</h2>
             <div>
                 <label htmlFor='button'>Please enter your username</label>
                 <input  onChange={enterInput} id="button"/>
-                <button onClick={enterHandler} disabled={`${name}`.length-1 < 3 ? true : false} >ENTER</button>
+                <button onClick={enterHandler} disabled={enableButtonToggle()} >ENTER</button>
             </div>
         </div>
     );
