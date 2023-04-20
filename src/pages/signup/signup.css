@@ -48,6 +48,9 @@
     background-color: rgba(99, 135, 237, 0.8);
     cursor: pointer;
 }
+.signup-content button:disabled {
+    opacity: .7;
+}
 
 @media screen and (min-width:768px) {
    .signup-content h2 {

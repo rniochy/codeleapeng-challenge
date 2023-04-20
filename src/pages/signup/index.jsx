@@ -15,7 +15,7 @@ const Signup = () => {
     }
     const enterInput = (e) => {
          setName(e.target.value);
-         console.log(store.getState())
+         console.log(`${name}`.length )
     }
 
     return (
@@ -24,7 +24,7 @@ const Signup = () => {
             <div>
                 <label htmlFor='button'>Please enter your username</label>
                 <input  onChange={enterInput} id="button"/>
-                <button onClick={enterHandler} >ENTER</button>
+                <button onClick={enterHandler} disabled={`${name}`.length-1 < 3 ? true : false} >ENTER</button>
             </div>
         </div>
     );
