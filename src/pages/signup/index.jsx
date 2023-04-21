@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import * as actions from '../../actions/actions'
+import Button from '../../components/button';
 import store from '../../redux/store';
 import "./signup.css";
 
@@ -28,7 +29,11 @@ const Signup = ({logged, setLogged, name, setName}) => {
             <div>
                 <label htmlFor='button'>Please enter your username</label>
                 <input  onChange={enterInput} id="button"/>
-                <button onClick={enterHandler} disabled={enableButtonToggle()} >ENTER</button>
+                <Button 
+                    eventClick={enterHandler} 
+                    ableButton={enableButtonToggle()} 
+                    classButton={"enter"} name={"ENTER"} 
+                />
             </div>
         </div>
     );

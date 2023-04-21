@@ -6,7 +6,7 @@
      background-color: #ffffff;
 }
 .signup-content h2 {
-     font-size: small;
+     font-size: smaller;
      margin-bottom: 0.7rem;
      font-style: bold;
      font-weight: 800;
@@ -17,41 +17,19 @@
 }
 .signup-content label {
     height: 19px;
-    font-size: 11pt;
+    font-size: 10pt;
     margin-bottom: 0.3rem;
     font-weight: 400;
     color: #000000;
 }
 .signup-content input {
-    height: 26px;
+    height: 20px;
     border: 1px solid #777777;
     border-radius: 8px;
     margin-bottom: 0.5rem;
     line-height: 13px;
     color: #CCCCCC;
-    text-indent: 15px;
-}
-.signup-content button {
-    width: 70px;
-    height: 30px;
-    background-color: #7695EC;
-    border: 1px solid #777777;
-    border-radius: 8px;
-    font-size: 10pt;
-    font-weight: 700;
-    align-self: end;
-    line-height: 13px;
-    color: #ffffff;
-    outline: none;
-}
-.signup-content button:hover {
-    background-color: rgba(99, 135, 237, 0.8);
-    cursor: pointer;
-}
-.signup-content button:disabled {
-    opacity: .7;
-    background-color: #777777;
-    cursor: default;
+    text-indent: 10px;
 }
 
 @media screen and (min-width:768px) {
@@ -74,19 +52,5 @@
        line-height: 18px;
        margin-bottom: 0.5rem;
        font-weight: 400;
-   }
-   .signup-content button {
-       width: 70px;
-       height: 30px;
-       background-color: #7695EC;
-       border: 1px solid #777777;
-       border-radius: 8px;
-       font-size: 10pt;
-       font-weight: 700;
-       align-self: end;
-       line-height: 13px;
-       color: #ffffff;
-       outline: none;
-   }
-    
+   }   
 }

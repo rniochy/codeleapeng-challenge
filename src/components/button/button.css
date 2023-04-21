@@ -1,0 +1,40 @@
+ button {
+    width: 120px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 10pt;
+    font-weight: 700;
+    align-self: end;
+    line-height: 13px;
+    outline: none;
+}
+.enter:hover {
+    background-color: rgba(99, 135, 237, 0.8);
+    cursor: pointer;
+}
+
+.enter:disabled {
+    opacity: .7;
+    background-color: #777777;
+    cursor: default;
+}
+.enter {
+    background-color: #7695EC;
+    border: 1px solid #777777;
+    color: #ffffff;
+}
+
+@media screen and (max-width:768px) { 
+    button {
+    width: 60px;
+    height: 20px;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    align-self: end;
+    line-height: 13px;
+    color: #ffffff;
+    outline: none;
+}
+}
