@@ -28,7 +28,7 @@ const Signup = ({logged, setLogged, name, setName}) => {
             <h2>Welcome to CodeLeap network!</h2>
             <div>
                 <label htmlFor='button'>Please enter your username</label>
-                <input  onChange={enterInput} id="button"/>
+                <input type="text"  onChange={enterInput} id="button"/>
                 <Button 
                     eventClick={enterHandler} 
                     ableButton={enableButtonToggle()} 
