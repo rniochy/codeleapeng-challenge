@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import * as actions from '../../actions/actions'
 import Button from '../../components/button';
+import InputText from '../../components/inputText';
 import store from '../../redux/store';
 import "./signup.css";
 
@@ -22,14 +23,17 @@ const Signup = ({logged, setLogged, name, setName}) => {
         if(`${name}`.length-1 < 2) return true;
          return false;
     }
-
     return (
         <div className='signup-content-main'>
             <div className='signup-content'>
                 <h2>Welcome to CodeLeap network!</h2>
                 <div>
                     <label htmlFor='button'>Please enter your username</label>
-                    <input type="text"  onChange={enterInput} id="button"/>
+                    <InputText 
+                        id={"button"} 
+                        placeholder ="John Doe" 
+                        eventText={enterInput} 
+                    />
                     <Button 
                         eventClick={enterHandler} 
                         ableButton={enableButtonToggle()} 

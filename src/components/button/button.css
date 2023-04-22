@@ -1,7 +1,7 @@
  button {
     width: 120px;
     height: 32px;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 10pt;
     font-weight: 700;
     align-self: end;
@@ -29,12 +29,6 @@
     width: 60px;
     height: 20px;
     border: 1px solid #777777;
-    border-radius: 8px;
     font-size: 10px;
-    font-weight: 700;
-    align-self: end;
-    line-height: 13px;
-    color: #ffffff;
-    outline: none;
 }
 }

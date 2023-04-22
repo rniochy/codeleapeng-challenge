@@ -12,11 +12,19 @@ const Main = () => {
                         <h3 className='main-post-header-title'>What's on your mind?</h3>
                         <div className='main-post title'>
                             <label htmlFor='title'>Title</label>
-                            <input  type="text" id="title" placeholder='Hello world'/>
+                            <InputText 
+                                id={"title"} 
+                                placeholder ="Hello world" 
+                                eventText={enterInput} 
+                            />
                         </div>
                         <div className='main-post content'>
                             <label htmlFor='content'>Content</label>
-                            <input type="text" id="content" placeholder='Content here'/>
+                            <InputText 
+                                id={"content"} 
+                                placeholder ="Content here" 
+                                eventText={enterInput} 
+                            />
                         </div>  
                     </div>    
                 </section>
