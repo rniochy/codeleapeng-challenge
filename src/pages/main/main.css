@@ -23,6 +23,8 @@
       padding: 15px;
 }
 .main-post-content {
+      display: flex;
+      flex-direction: column;
       margin-top: 10px;
       border: 1px solid #999999;
       border-radius: 16px;

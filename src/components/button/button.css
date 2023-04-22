@@ -20,7 +20,6 @@
 }
 .enter {
     background-color: #7695EC;
-    border: 1px solid #777777;
     color: #ffffff;
 }
 
@@ -28,7 +27,6 @@
     button {
         width: 90px;
         height: 26px;
-        border: 1px solid #777777;
         font-size: 9pt;
 }
 }

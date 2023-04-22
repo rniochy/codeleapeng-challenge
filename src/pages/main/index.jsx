@@ -1,17 +1,27 @@
 import React from 'react';
+import { useState } from 'react';
+import Button from '../../components/button';
 import FormTitle from '../../components/formTitle';
 import InputText from '../../components/inputText';
 import Label from '../../components/label';
 import './main.css';
 
 const Main = () => {
+     const [title, setTitle] = useState();
+     const [content, setContent] = useState();
 
-    const inputTextTitleHandler = ()=>{
+    const inputTextTitleHandler = (e)=>{
+        setTitle(e.target.value);
 
     }
-    const inputTextContentHandler = ()=>{
+    const inputTextContentHandler = (e)=>{
+        setContent(e.target.value);
 
     }
+    const createPostHandler = () =>{
+        console.log(title, content)
+
+    } 
     return (
             <div className='main-content'>
                 <header>
@@ -31,6 +41,7 @@ const Main = () => {
                                 id={"title"} 
                                 placeholder ="Hello world" 
                                 eventText={inputTextTitleHandler} 
+                                classToSize ="small"
                             />
                         </div>
                         <div className='main-post content'>
@@ -42,8 +53,10 @@ const Main = () => {
                                 id={"content"} 
                                 placeholder ="Content here" 
                                 eventText={inputTextContentHandler} 
+                                classToSize ="large"
                             />
                         </div>  
+                        <Button eventClick={createPostHandler} ableButton={false} name="Create" classButton ="enter create"/>
                     </div>    
                 </section>
 
