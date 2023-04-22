@@ -12,16 +12,16 @@ function App() {
   console.log(store.getState())
   
   return (
-    <div className="App">
-      { logged ? <Main/> : 
-        <Signup 
-              logged ={logged} 
-              setLogged={setLogged} 
-              name={name} 
-              setName={setName}
-        /> 
-      }
-    </div>
+            <>
+              { logged ? <Main/> : 
+                <Signup 
+                      logged ={logged} 
+                      setLogged={setLogged} 
+                      name={name} 
+                      setName={setName}
+                /> 
+              }
+            </>
   )
 }
 

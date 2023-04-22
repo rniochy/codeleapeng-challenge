@@ -1,15 +1,23 @@
+.signup-content-main {
+    height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
 .signup-content {
-     height: fit-content;
-     padding: 1.2rem;
-     margin: 0.2rem;
-     border-radius: 16px;
-     background-color: #ffffff;
+    height: 100%;
+    height: fit-content;
+    padding: 1.3rem;
+    border-radius: 16px;
+    background-color: #ffffff;
 }
 .signup-content h2 {
      font-size: smaller;
      margin-bottom: 0.7rem;
      font-style: bold;
      font-weight: 800;
+     align-self: flex-start;
+
 }
 .signup-content div{ 
     display: flex;
@@ -34,13 +42,10 @@
 
 @media screen and (min-width:768px) {
    .signup-content h2 {
+        align-self: flex-start;
         font-size: 22px;
         margin-bottom: 0.9rem;
         font-weight: 800;
-   }
-   .signup-content div{ 
-       display: flex;
-       flex-direction: column;
    }
    .signup-content input {
        height: 32px;

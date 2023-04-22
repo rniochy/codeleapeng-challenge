@@ -24,16 +24,18 @@ const Signup = ({logged, setLogged, name, setName}) => {
     }
 
     return (
-        <div className='signup-content'>
-            <h2>Welcome to CodeLeap network!</h2>
-            <div>
-                <label htmlFor='button'>Please enter your username</label>
-                <input type="text"  onChange={enterInput} id="button"/>
-                <Button 
-                    eventClick={enterHandler} 
-                    ableButton={enableButtonToggle()} 
-                    classButton={"enter"} name={"ENTER"} 
-                />
+        <div className='signup-content-main'>
+            <div className='signup-content'>
+                <h2>Welcome to CodeLeap network!</h2>
+                <div>
+                    <label htmlFor='button'>Please enter your username</label>
+                    <input type="text"  onChange={enterInput} id="button"/>
+                    <Button 
+                        eventClick={enterHandler} 
+                        ableButton={enableButtonToggle()} 
+                        classButton={"enter"} name={"ENTER"} 
+                    />
+                </div>
             </div>
         </div>
     );
