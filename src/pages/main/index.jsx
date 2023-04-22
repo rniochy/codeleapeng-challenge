@@ -4,6 +4,7 @@ import Button from '../../components/button';
 import FormTitle from '../../components/formTitle';
 import InputText from '../../components/inputText';
 import Label from '../../components/label';
+import PostItem from '../../components/postItem';
 import './main.css';
 
 const Main = () => {
@@ -56,11 +57,16 @@ const Main = () => {
                                 classToSize ="large"
                             />
                         </div>  
-                        <Button eventClick={createPostHandler} ableButton={false} name="Create" classButton ="enter create"/>
+                        <Button 
+                            eventClick={createPostHandler} 
+                            ableButton={false} 
+                            name="Create" 
+                            classButton ="enter create"
+                        />
                     </div>    
                 </section>
-
-                </div>
+                <PostItem />
+            </div>
     );
 }
 export default Main;
