@@ -32,20 +32,8 @@
      display: flex;
      flex-direction: column;  
 }
-.main-post input {
-     height: 20px;
-     border: 1px solid #777777;
-     border-radius: 8px;
-     margin-bottom: 0.5rem;
-     line-height: 13px;
-     color: #CCCCCC;
-     text-indent: 10px; 
-}
 .main-post-header-title {
      margin-bottom: 0.7rem;
-}
-.main-post label {
-     margin-bottom: 0.3rem;
 }
 .title {
       margin-bottom: .7rem;

@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import * as actions from '../../actions/actions'
 import Button from '../../components/button';
 import InputText from '../../components/inputText';
+import Label from '../../components/label';
 import store from '../../redux/store';
 import "./signup.css";
 
@@ -15,7 +16,7 @@ const Signup = ({logged, setLogged, name, setName}) => {
              payload: {name, logged}
          });
     }
-    const enterInput = (e) => {
+    const InputTextHandler = (e) => {
          setName(e.target.value);
     }
 
@@ -28,11 +29,14 @@ const Signup = ({logged, setLogged, name, setName}) => {
             <div className='signup-content'>
                 <h2>Welcome to CodeLeap network!</h2>
                 <div>
-                    <label htmlFor='button'>Please enter your username</label>
+                    <Label 
+                        HTMLfor = "button" 
+                        content ="Please enter your username"
+                    />
                     <InputText 
                         id={"button"} 
                         placeholder ="John Doe" 
-                        eventText={enterInput} 
+                        eventText={InputTextHandler} 
                     />
                     <Button 
                         eventClick={enterHandler} 

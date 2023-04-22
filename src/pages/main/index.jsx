@@ -1,7 +1,15 @@
 import React from 'react';
+import InputText from '../../components/inputText';
 import './main.css';
 
 const Main = () => {
+
+    const inputTextTitleHandler = ()=>{
+
+    }
+    const inputTextContentHandler = ()=>{
+
+    }
     return (
             <div className='main-content'>
                 <header>
@@ -15,7 +23,7 @@ const Main = () => {
                             <InputText 
                                 id={"title"} 
                                 placeholder ="Hello world" 
-                                eventText={enterInput} 
+                                eventText={inputTextTitleHandler} 
                             />
                         </div>
                         <div className='main-post content'>
@@ -23,7 +31,7 @@ const Main = () => {
                             <InputText 
                                 id={"content"} 
                                 placeholder ="Content here" 
-                                eventText={enterInput} 
+                                eventText={inputTextContentHandler} 
                             />
                         </div>  
                     </div>    

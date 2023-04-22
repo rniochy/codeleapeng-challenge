@@ -23,22 +23,6 @@
     display: flex;
     flex-direction: column;
 }
-.signup-content label {
-    height: 19px;
-    font-size: 10pt;
-    margin-bottom: 0.3rem;
-    font-weight: 400;
-    color: #000000;
-}
-/* .signup-content input {
-    height: 20px;
-    border: 1px solid #777777;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    line-height: 13px;
-    color: #CCCCCC;
-    text-indent: 10px;
-} */
 
 @media screen and (min-width:768px) {
    .signup-content h2 {
@@ -52,10 +36,10 @@
        width: 452px;
        border-radius: 8px;
    } */
-   .signup-content label {
+   /* .signup-content label {
        font-size: 16px;
        line-height: 18px;
        margin-bottom: 0.5rem;
        font-weight: 400;
-   }   
+   }    */
 }
