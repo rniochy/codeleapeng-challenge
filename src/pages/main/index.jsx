@@ -1,5 +1,6 @@
 import React from 'react';
 import InputText from '../../components/inputText';
+import Label from '../../components/label';
 import './main.css';
 
 const Main = () => {
@@ -19,7 +20,10 @@ const Main = () => {
                     <div className='main-post-content'>
                         <h3 className='main-post-header-title'>What's on your mind?</h3>
                         <div className='main-post title'>
-                            <label htmlFor='title'>Title</label>
+                            <Label  
+                                HTMLfor="title" 
+                                content="Title"
+                            />
                             <InputText 
                                 id={"title"} 
                                 placeholder ="Hello world" 
@@ -27,7 +31,10 @@ const Main = () => {
                             />
                         </div>
                         <div className='main-post content'>
-                            <label htmlFor='content'>Content</label>
+                            <Label  
+                                HTMLfor="content" 
+                                content="Content"
+                            />
                             <InputText 
                                 id={"content"} 
                                 placeholder ="Content here" 
