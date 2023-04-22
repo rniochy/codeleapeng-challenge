@@ -11,35 +11,35 @@
     border-radius: 16px;
     background-color: #ffffff;
 }
-.signup-content h2 {
+/* .signup-content h2 {
      font-size: smaller;
      margin-bottom: 0.7rem;
      font-style: bold;
      font-weight: 800;
      align-self: flex-start;
 
-}
+} */
 .signup-content div{ 
     display: flex;
     flex-direction: column;
 }
 
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) {
    .signup-content h2 {
         align-self: flex-start;
         font-size: 22px;
         margin-bottom: 0.9rem;
         font-weight: 800;
    }
-   /* .signup-content input {
+   .signup-content input {
        height: 32px;
        width: 452px;
        border-radius: 8px;
-   } */
-   /* .signup-content label {
+   } 
+    .signup-content label {
        font-size: 16px;
        line-height: 18px;
        margin-bottom: 0.5rem;
        font-weight: 400;
-   }    */
-}
+   }   
+} */

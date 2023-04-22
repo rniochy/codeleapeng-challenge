@@ -1,4 +1,5 @@
 import React from 'react';
+import FormTitle from '../../components/formTitle';
 import InputText from '../../components/inputText';
 import Label from '../../components/label';
 import './main.css';
@@ -18,7 +19,9 @@ const Main = () => {
                 </header>
                 <section className='main-post-content-main'>
                     <div className='main-post-content'>
-                        <h3 className='main-post-header-title'>What's on your mind?</h3>
+                        <FormTitle 
+                            title="What's on your mind?" 
+                        />
                         <div className='main-post title'>
                             <Label  
                                 HTMLfor="title" 

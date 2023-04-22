@@ -1,11 +1,16 @@
 input {
-    height: 20px;
     border: 1px solid #777777;
     border-radius: 6px;
     margin-bottom: 0.5rem;
     line-height: 13px;
     color: #CCCCCC;
     text-indent: 10px;
+}
+.large {
+     height: 74px;
+}
+.small {
+    height: 24px;
 }
 
 @media screen and (min-width:768px) { 

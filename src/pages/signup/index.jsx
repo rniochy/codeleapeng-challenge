@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import * as actions from '../../actions/actions'
 import Button from '../../components/button';
+import FormTitle from '../../components/formTitle';
 import InputText from '../../components/inputText';
 import Label from '../../components/label';
 import store from '../../redux/store';
@@ -27,7 +28,9 @@ const Signup = ({logged, setLogged, name, setName}) => {
     return (
         <div className='signup-content-main'>
             <div className='signup-content'>
-                <h2>Welcome to CodeLeap network!</h2>
+                <FormTitle 
+                title="Welcome to CodeLeap network" 
+                />
                 <div>
                     <Label 
                         HTMLfor = "button" 
@@ -37,6 +40,7 @@ const Signup = ({logged, setLogged, name, setName}) => {
                         id={"button"} 
                         placeholder ="John Doe" 
                         eventText={InputTextHandler} 
+                        classToSize="small"
                     />
                     <Button 
                         eventClick={enterHandler} 
