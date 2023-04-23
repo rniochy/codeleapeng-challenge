@@ -6,9 +6,9 @@ const CreateItem = () => {
         <div className='classitem-content'>
             <h2>Welcome to CodeLeap network!</h2>
             <div>
-                <label htmlFor='button'>Please enter your username</label>
-                <input  id="button"/>
-                <button >ENTER</button>
+                <label htmlFor='input'>Please enter your username</label>
+                <input  id="input"/>
+                <button type="submit" >ENTER</button>
             </div>
         </div>
     );
