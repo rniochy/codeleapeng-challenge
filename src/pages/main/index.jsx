@@ -66,6 +66,8 @@ const Main = () => {
                     </div>    
                 </section>
                 <PostItem />
+                <PostItem />
+                <PostItem />
             </div>
     );
 }

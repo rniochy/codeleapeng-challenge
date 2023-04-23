@@ -1,38 +1,65 @@
 .content-post-item {
      padding: 15px;
 }
-.content-post-item div {
-    border: 1px solid #999999;
-}
 .header-post-item {
     height: 60px;
-    margin-bottom: .7rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #7695EC;
     color: #ffffff;
-    
+    border-radius: 16px 16px 0 0;    
 }
 .header-post-item  h2{
+     /* font-size: medium; */
+     color: #ffffff;
      float: left;
-     margin-top: 1rem;
+     margin: 1rem 0 1rem 1rem;
+     word-wrap: break-word;
 }
-.header-post-item div{
-     float: right;
-     margin-top: 1rem;
+ .header-post-item-icons {
+      width: 2rem;
+      float: right;
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 1rem 0 1rem;
+      transition: all 500ms ease-in-out;
  }
+.header-post-item-icons { 
+    font-size: small;     
+}
+.header-post-item-icons span:hover { 
+    font-size: 14pt;     
+}
 .body-post-item {
      display: flex;
      flex-direction: column;
+     padding: 10px;
      border: 1px solid #999999;
+     border-top: none;
 }
 .body-post-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: #999999;
 }
-/* .body-post-header span {
-    position: absolute;
-    top: 1rem;
-} */
+.content-post {
+     margin-top: .5rem;
+}
+.content-post p {
+     text-align: justify;
+     font-size: 12pt;
+}
+
+@media screen and (min-width: 200px) and  (max-width:768px)  {
+    .body-post-header span{
+         font-size: smaller;
+    }
+    .header-post-item {
+        height: max-content;
+    }
+    .header-post-item-icons {
+        width: 3rem;
+    }
+}

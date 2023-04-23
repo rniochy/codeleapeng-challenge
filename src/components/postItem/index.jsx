@@ -6,10 +6,10 @@ import {FiEdit} from 'react-icons/fi'
 
 const PostItem = () => {
     return  <article className='content-post-item'>
-                <div>
+                <div className='content-post-border'>
                     <div className='header-post-item'>
                         <h2>My first Post at CodeLeap Network</h2>
-                        <div>
+                        <div className='header-post-item-icons'>
                             <span><AiOutlineDelete/></span>
                             <span><FiEdit/></span>
                         </div>
