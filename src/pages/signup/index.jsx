@@ -17,7 +17,9 @@ const Signup = ({logged, setLogged, name, setName}) => {
              payload: {
                 name, 
                 logged, 
-                cancel:false
+                cancel:false,
+                delete:false,
+                edite:false
             }
          });
     }

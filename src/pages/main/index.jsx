@@ -13,7 +13,7 @@ const Main = () => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
      const [update, setUpdate] = useState();
-     const {cancel} = store.getState();
+     const {cancel, edite, delete} = store.getState();
 
     useEffect(()=>{
         
