@@ -13,10 +13,10 @@ const Main = () => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
      const [update, setUpdate] = useState();
-     const {cancel, edite, delete} = store.getState();
+     const {cancel, edite, delete_} = store.getState();
 
     useEffect(()=>{
-        
+        console.log(edite, delete_);
     }, [update])
 
     const inputTextTitleHandler = (e)=>{

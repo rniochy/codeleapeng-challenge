@@ -18,7 +18,7 @@ const Signup = ({logged, setLogged, name, setName}) => {
                 name, 
                 logged, 
                 cancel:false,
-                delete:false,
+                delete_:false,
                 edite:false
             }
          });
