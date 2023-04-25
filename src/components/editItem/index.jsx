@@ -1,4 +1,5 @@
 import React from 'react';
+import store from '../../redux/store';
 import Button from '../button';
 import Label from '../label';
 import FormTitle from '../formTitle';
@@ -12,6 +13,12 @@ const EditItem = () => {
     }
     const inputTextTitleHandler = () => {
 
+    }
+    const cancelHandler = () =>{
+        store.dispatch({
+            type: actions.LOGIN,
+            payload: {name, logged}
+        });
     }
     return (
             <div className='edit-item-content'>
@@ -52,6 +59,7 @@ const EditItem = () => {
                             ableButton={false} 
                             name="Cancel" 
                             classButton="cancel" 
+                            eventClick = {cancelHandler}
                             />
                     </span>
                     <span> 

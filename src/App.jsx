@@ -8,7 +8,6 @@ function App() {
   const [logged, setLogged] = useState(false);
   const [name, setName] = useState('');
 
-  // AiTwotoneDelete AiOutlineDelete FiEdit
   console.log(store.getState())
   
   return (
