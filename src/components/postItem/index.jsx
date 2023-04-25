@@ -18,7 +18,7 @@ const PostItem = () => {
     const deleteHandler = () =>{
         store.dispatch({
             type: actions.DELETE,
-            payload: {delete: true }
+            payload: {delete: true}
         });
 
     }
