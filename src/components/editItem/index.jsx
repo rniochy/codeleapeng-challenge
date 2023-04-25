@@ -3,6 +3,7 @@ import Button from '../button';
 import Label from '../label';
 import FormTitle from '../formTitle';
 import InputText from '../inputText';
+import './edit.css'
 
 const EditItem = () => {
 
