@@ -1,10 +1,49 @@
 import React from 'react';
+import Button from '../button';
+import Label from '../label';
+import FormTitle from '../formTitle';
+import InputText from '../inputText';
 
 const EditItem = () => {
+
+    const inputTextContentHandler = () => {
+         
+    }
+    const inputTextTitleHandler = () => {
+
+    }
     return (
             <div className='edit-item-content'>
-                <div className='delete-content-title'>
-                    <Label content={"Edit Item"}/>
+                <div className='edit-item-content-title'>
+                    <FormTitle
+                        content={"Edit Item"}
+                    />
+                </div>
+                <div>
+                    <div className='main-post title'>
+                        <Label  
+                            HTMLfor="title" 
+                            content="Title"
+                        />
+                        <InputText 
+                            id={"title"} 
+                            placeholder ="Hello world" 
+                            eventText={inputTextTitleHandler} 
+                            classToSize ="small"
+                        />
+                     </div>
+                    <div className='main-post content'>
+                        <Label  
+                            HTMLfor="content" 
+                            content="Content"
+                        />
+                        <InputText 
+                            id={"content"} 
+                            placeholder ="Content here" 
+                            eventText={inputTextContentHandler} 
+                            classToSize ="large"
+                        />
+                     </div>  
                 </div>
                 <div className='edit-item-buttons' >
                     <span>
@@ -17,8 +56,8 @@ const EditItem = () => {
                     <span> 
                         <Button 
                             ableButton={false} 
-                            name="Delete" 
-                            classButton="delete"
+                            name="Save" 
+                            classButton="save"
                     /></span>
                 </div> 
             </div>

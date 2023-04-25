@@ -1,0 +1,9 @@
+.edit-item-content {
+    z-index: 9999;
+    background-color: #fff;
+    padding: .5rem;
+    width: 600px;
+    height: 125px;
+    border-radius: 16px;
+    margin: .6rem;
+}

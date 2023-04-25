@@ -35,10 +35,10 @@ button:hover {
 }
 .save {
       background-color: #47B960;
+      color: #ffffff;
 }
 .save:hover {
       background-color: rgba(71, 185, 96,.9);
-      color: #ffffff;
 }
 .delete:hover {
      background-color: rgba(255, 81, 81, .9);
