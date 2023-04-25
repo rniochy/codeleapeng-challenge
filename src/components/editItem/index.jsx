@@ -4,10 +4,11 @@ import Button from '../button';
 import Label from '../label';
 import FormTitle from '../formTitle';
 import InputText from '../inputText';
+import * as actions from '../../actions/actions'
 import './edit.css'
 
 const EditItem = () => {
-
+     
     const inputTextContentHandler = () => {
          
     }
@@ -16,9 +17,11 @@ const EditItem = () => {
     }
     const cancelHandler = () =>{
         store.dispatch({
-            type: actions.LOGIN,
-            payload: {name, logged}
-        });
+            type: actions.CANCEL,
+            payload: {cancel: true }
+        }); 
+        
+    console.log(store.getState())
     }
     return (
             <div className='edit-item-content'>

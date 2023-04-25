@@ -6,12 +6,14 @@ import InputText from '../../components/inputText';
 import Label from '../../components/label';
 import PostItem from '../../components/postItem';
 import './main.css';
-import Delete from '../../components/deleteItem';
 import EditItem from '../../components/editItem';
+import store from '../../redux/store';
 
 const Main = () => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
+     const [cancel, setCancel] = useState(false);
+
 
     const inputTextTitleHandler = (e)=>{
         setTitle(e.target.value);
@@ -22,14 +24,15 @@ const Main = () => {
 
     };
     const createPostHandler = () =>{
-        console.log(title, content)
+        // console.log(title, content)
 
     } 
     return (
         <div className='main-content'>
                 <div className='manege-actins-detele-edite'>
                     {/* <Delete /> */}
-                    <EditItem />
+                    {console.log(store.getState())}
+                    <EditItem  setcancel={setCancel}/>
                 </div>
                 <header>
                     <h1>CodeLeap Network</h1>

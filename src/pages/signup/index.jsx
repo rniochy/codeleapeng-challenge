@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import * as actions from '../../actions/actions'
+import * as actions from '../../actions/actions';
 import Button from '../../components/button';
 import FormTitle from '../../components/formTitle';
 import InputText from '../../components/inputText';
