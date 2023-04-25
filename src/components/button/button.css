@@ -1,4 +1,4 @@
- button {
+button {
     width: 120px;
     height: 32px;
     border-radius: 5px;
@@ -8,9 +8,11 @@
     line-height: 13px;
     outline: none;
 }
+button:hover { 
+     cursor: pointer;
+}
 .enter:hover {
     background-color: rgba(99, 135, 237, 0.8);
-    cursor: pointer;
 }
 
 .enter:disabled {
@@ -21,6 +23,29 @@
 .enter {
     background-color: #7695EC;
     color: #ffffff;
+}
+.delete {
+     background-color: #FF5151;
+     color: #ffffff;
+}
+.cancel {
+     color: #000000;
+     background-color: unset;
+     border: 1px solid #000000;
+}
+.save {
+      background-color: #47B960;
+}
+.save:hover {
+      background-color: rgba(71, 185, 96,.9);
+      color: #ffffff;
+}
+.delete:hover {
+     background-color: rgba(255, 81, 81, .9);
+}
+.cancel:hover {
+     color: rgba(0, 0, 0, .9);
+     background-color: unset;
 }
 
 @media screen and (max-width:768px) { 

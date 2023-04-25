@@ -6,6 +6,8 @@ import InputText from '../../components/inputText';
 import Label from '../../components/label';
 import PostItem from '../../components/postItem';
 import './main.css';
+import Delete from '../../components/deleteItem';
+import EditItem from '../../components/editItem';
 
 const Main = () => {
      const [title, setTitle] = useState();
@@ -18,13 +20,17 @@ const Main = () => {
     const inputTextContentHandler = (e)=>{
         setContent(e.target.value);
 
-    }
+    };
     const createPostHandler = () =>{
         console.log(title, content)
 
     } 
     return (
-            <div className='main-content'>
+        <div className='main-content'>
+                <div className='manege-actins-detele-edite'>
+                    {/* <Delete /> */}
+                    <EditItem />
+                </div>
                 <header>
                     <h1>CodeLeap Network</h1>
                 </header>

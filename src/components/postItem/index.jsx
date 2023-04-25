@@ -3,6 +3,7 @@ import './post.css';
 // AiTwotoneDelete AiOutlineDelete FiEdit
 import {AiOutlineDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
+import Delete from '../deleteItem';
 
 const PostItem = () => {
     return  <article className='content-post-item'>
@@ -25,7 +26,7 @@ const PostItem = () => {
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> 
             </article>
 }
 
