@@ -44,8 +44,7 @@ button:hover {
      background-color: rgba(255, 81, 81, .9);
 }
 .cancel:hover {
-     color: rgba(0, 0, 0, .9);
-     background-color: unset;
+     color: rgba(0, 0, 0, .7);
 }
 
 @media screen and (max-width:768px) { 

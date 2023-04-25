@@ -1,14 +1,15 @@
 .edit-item-content {
     background-color: #fff;
-     padding: .5rem;
+    padding: .5rem;
     width: 600px;
     height: fit-content;
     border-radius: 16px;
+    margin: .6rem;
 }
 .edit-item-buttons {
     display: flex;
     justify-content: flex-end;
-    margin: 2rem  .5rem 0 0;
+    margin: .5rem  .2rem 0 0;
 }
 .edit-item-buttons span:first-child {
     margin-right: .3rem;
