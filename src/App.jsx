@@ -7,10 +7,8 @@ import './App.css';
 function App() {
   const [logged, setLogged] = useState(false);
   const [name, setName] = useState('');
-
-  console.log(store.getState())
-  
-  return (
+ 
+   return (
             <>
               { logged ?
                <Main/> : 

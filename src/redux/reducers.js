@@ -6,7 +6,8 @@ export default function reducer(store = [], action){
         case actions.LOGIN:
             return {
                  ...store, name: action.payload.name,
-                 logged: action.payload.logged
+                 logged: action.payload.logged,
+                 cancel: action.payload.cancel
             }
         case actions.CANCEL:
             return {

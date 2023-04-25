@@ -14,7 +14,11 @@ const Signup = ({logged, setLogged, name, setName}) => {
          setLogged(true);
          store.dispatch({
              type: actions.LOGIN,
-             payload: {name, logged}
+             payload: {
+                name, 
+                logged, 
+                cancel:false
+            }
          });
     }
     const InputTextHandler = (e) => {

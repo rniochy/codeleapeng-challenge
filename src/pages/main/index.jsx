@@ -8,12 +8,17 @@ import PostItem from '../../components/postItem';
 import './main.css';
 import EditItem from '../../components/editItem';
 import store from '../../redux/store';
+import { useEffect } from 'react';
 
 const Main = () => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
-     const [cancel, setCancel] = useState(false);
+     const [update, setUpdate] = useState();
+     const {cancel} = store.getState();
 
+    useEffect(()=>{
+        
+    }, [update])
 
     const inputTextTitleHandler = (e)=>{
         setTitle(e.target.value);
@@ -31,8 +36,7 @@ const Main = () => {
         <div className='main-content'>
                 <div className='manege-actins-detele-edite'>
                     {/* <Delete /> */}
-                    {console.log(store.getState())}
-                    <EditItem  setcancel={setCancel}/>
+                   {!cancel && <EditItem setUpdate={setUpdate}  />}
                 </div>
                 <header>
                     <h1>CodeLeap Network</h1>

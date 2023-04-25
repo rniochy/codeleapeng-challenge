@@ -7,7 +7,7 @@ import InputText from '../inputText';
 import * as actions from '../../actions/actions'
 import './edit.css'
 
-const EditItem = () => {
+const EditItem = ({setUpdate}) => {
      
     const inputTextContentHandler = () => {
          
@@ -20,8 +20,7 @@ const EditItem = () => {
             type: actions.CANCEL,
             payload: {cancel: true }
         }); 
-        
-    console.log(store.getState())
+        setUpdate(true);
     }
     return (
             <div className='edit-item-content'>

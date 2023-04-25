@@ -4,6 +4,14 @@ import Button from '../button';
 import Label from '../label';
 
 const Delete = ({item}) => {
+    
+    const cancelHandler = () =>{
+        store.dispatch({
+            type: actions.CANCEL,
+            payload: {cancel: true }
+        }); 
+        setUpdate(true);
+    }
     return (
         <div className='delete-content'>
              <div className='delete-content-title'>
