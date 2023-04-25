@@ -1,14 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
+import React ,  { useEffect, useState }  from 'react';
 import Button from '../../components/button';
 import FormTitle from '../../components/formTitle';
 import InputText from '../../components/inputText';
 import Label from '../../components/label';
 import PostItem from '../../components/postItem';
-import './main.css';
 import EditItem from '../../components/editItem';
+import DeleteItem from '../../components/deleteItem';
 import store from '../../redux/store';
-import { useEffect } from 'react';
+import './main.css';
 
 const Main = () => {
      const [title, setTitle] = useState();
@@ -35,8 +34,8 @@ const Main = () => {
     return (
         <div className='main-content'>
                 <div className='manege-actins-detele-edite'>
-                    {/* <Delete /> */}
-                   {!cancel && <EditItem setUpdate={setUpdate}  />}
+                    { !cancel && <DeleteItem  setUpdate={setUpdate}/> }
+                   {/* {!cancel && <EditItem setUpdate={setUpdate}  />} */}
                 </div>
                 <header>
                     <h1>CodeLeap Network</h1>

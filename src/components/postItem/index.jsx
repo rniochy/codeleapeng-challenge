@@ -4,15 +4,35 @@ import './post.css';
 import {AiOutlineDelete} from 'react-icons/ai'
 import {FiEdit} from 'react-icons/fi'
 import Delete from '../deleteItem';
+import store from '../../redux/store';
 
 const PostItem = () => {
+
+    const editeHandler = () =>{
+        store.dispatch({
+            type: actions.EDITE,
+            payload: {edite: true }
+        }); 
+        
+    }
+    const deleteHandler = () =>{
+        store.dispatch({
+            type: actions.DELETE,
+            payload: {delete: true }
+        });
+
+    }
     return  <article className='content-post-item'>
                 <div className='content-post-border'>
                     <div className='header-post-item'>
                         <h2>My first Post at CodeLeap Network</h2>
                         <div className='header-post-item-icons'>
-                            <span><AiOutlineDelete/></span>
-                            <span><FiEdit/></span>
+                            <span onClick={deleteHandler}>
+                                <AiOutlineDelete/>
+                            </span>
+                            <span onClick={editeHandler}>
+                                <FiEdit/>
+                            </span>
                         </div>
                     </div>
                     <div className='body-post-item'>

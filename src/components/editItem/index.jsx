@@ -4,7 +4,7 @@ import Button from '../button';
 import Label from '../label';
 import FormTitle from '../formTitle';
 import InputText from '../inputText';
-import * as actions from '../../actions/actions'
+import * as actions from '../../actions/actions';
 import './edit.css'
 
 const EditItem = ({setUpdate}) => {
