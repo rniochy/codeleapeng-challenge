@@ -8,7 +8,7 @@
      width: 600px;
      height: 125px;
      border-radius: 16px;
-     margin: .6rem;
+     margin: calc(50rem - 60%) .6rem;
 }
 .delete-content-buttons {
       display: flex;

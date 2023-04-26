@@ -97,6 +97,13 @@ const Main = ({setLogged, setName}) => {
                 <PostItem setupdate ={setUpdate}/>
                 <PostItem setupdate ={setUpdate}/>
                 <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
       
             </div>
     );
