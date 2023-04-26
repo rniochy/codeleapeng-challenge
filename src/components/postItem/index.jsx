@@ -10,14 +10,20 @@ const PostItem = ({setupdate}) => {
     const editeHandler = () =>{
         store.dispatch({
             type: actions.EDITE,
-            payload: {edite: true }
+            payload: {
+                edite: true,
+                delete_:false
+             }
         }); 
         setupdate(e=>!e);
     }
     const deleteHandler = () =>{
         store.dispatch({
             type: actions.DELETE,
-            payload: {delete_: true}
+            payload: {
+                delete_: true,
+                edite: false
+            }
         });
         setupdate(e=>!e);
     }
