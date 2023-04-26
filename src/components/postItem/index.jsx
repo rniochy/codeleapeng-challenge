@@ -12,14 +12,14 @@ const PostItem = ({setupdate}) => {
             type: actions.EDITE,
             payload: {edite: true }
         }); 
-        setupdate(true);
+        setupdate(e=>!e);
     }
     const deleteHandler = () =>{
         store.dispatch({
             type: actions.DELETE,
-            payload: {delete: true}
+            payload: {delete_: true}
         });
-        setupdate(true);
+        setupdate(e=>!e);
     }
     return  <article className='content-post-item'>
                 <div className='content-post-border'>
