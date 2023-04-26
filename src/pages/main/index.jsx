@@ -16,7 +16,7 @@ const Main = () => {
      const {cancel, edite, delete_} = store.getState();
 
     useEffect(()=>{
-        console.log(edite, delete_, update);
+        console.log(edite, delete_);
     }, [update])
 
     const inputTextTitleHandler = (e)=>{
@@ -34,7 +34,7 @@ const Main = () => {
     return (
         <div className='main-content'>
                {
-                   (edite) && <div className='manege-actins-detele-edite'>
+                   (edite || delete_) && <div className='manege-actins-detele-edite'>
                         { (!cancel && delete_) && <DeleteItem  setUpdate={setUpdate}/> }
                         {(!cancel && edite) && <EditItem setUpdate={setUpdate}  />}
                     </div>

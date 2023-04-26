@@ -15,7 +15,10 @@ export default function reducer(store = [], action){
             }
         case actions.CANCEL:
             return {
-                ...store, cancel: action.payload.cancel
+                ...store, 
+                cancel: action.payload.cancel,
+                edite: action.payload.edite,
+                delete_: action.payload.detele_
             }
         case actions.DELETE:
             return {

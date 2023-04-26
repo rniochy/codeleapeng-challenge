@@ -10,9 +10,13 @@ const DeleteItem = ({setUpdate}) => {
     const cancelHandler = () =>{
         store.dispatch({
             type: CANCEL,
-            payload: {cancel: true }
+            payload: {
+                cancel: true,
+                delete_:false,
+                edite: false
+             }
         }); 
-        setUpdate(true);
+        setUpdate(e=>!e);
     }
     return (
         <div className='delete-content'>
