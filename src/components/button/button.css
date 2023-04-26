@@ -37,6 +37,13 @@ button:hover {
       background-color: #47B960;
       color: #ffffff;
 }
+.logout-button {
+     background-color: unset;
+     color: #c10404;
+}
+.logout-button:hover {
+     color: rgba(193, 4, 4, .6);
+}
 .save:hover {
       background-color: rgba(71, 185, 96,.9);
 }

@@ -9,7 +9,6 @@
       align-items: center;
 }
 .main-content {
-      position: relative;
      height: fit-content;
      width: 90%;
      margin: 0 auto;
@@ -20,13 +19,16 @@
       background-color: #7695EC;
       position: relative;    
 }
+.main-content header  div{
+      display: flex;
+      justify-content: space-between;
+}
 .main-content  h1 {
       font-size: medium;
       color: #ffffff;
-      position: absolute;
-      top: 30px;
-      left: 20px;
+      margin: 1em 0 0 2rem;
 }
+
 .main-post-content-main {
       padding: 15px;
 }

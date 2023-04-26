@@ -28,7 +28,7 @@ const Signup = ({logged, setLogged, name, setName}) => {
     }
 
     const enableButtonToggle =()=>{
-        if(`${name}`.length-1 < 2) return true;
+        if(`${name}`.length-1 < 1) return true;
          return false;
     }
     return (

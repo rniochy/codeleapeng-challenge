@@ -9,15 +9,19 @@ import DeleteItem from '../../components/deleteItem';
 import store from '../../redux/store';
 import './main.css';
 
-const Main = () => {
+const Main = ({setLogged, setName}) => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
      const [update, setUpdate] = useState(false);
      const {cancel, edite, delete_} = store.getState();
 
     useEffect(()=>{
-        console.log(edite, delete_, cancel);
     }, [update])
+
+    const logoutHandler = () => {
+        setLogged(e=>!e);
+        setName('');
+    }
 
     const inputTextTitleHandler = (e)=>{
         setTitle(e.target.value);
@@ -34,13 +38,24 @@ const Main = () => {
     return (
         <div className='main-content'>
                {
-                   (edite || delete_) && <div className='manege-actins-detele-edite'>
+                    (edite || delete_) && 
+                    <div className='manege-actins-detele-edite'>
                         { (!cancel && delete_) && <DeleteItem  setUpdate={setUpdate}/> }
                         {(!cancel && edite) && <EditItem setUpdate={setUpdate}  />}
                     </div>
                 }
                 <header>
-                    <h1>CodeLeap Network</h1>
+                    <div>
+                        <h1>CodeLeap Network</h1>
+                        <span>
+                                <Button 
+                                        eventClick={logoutHandler} 
+                                        ableButton={false} 
+                                        name="Lougout" 
+                                        classButton ="logout-button"
+                                />
+                            </span>
+                    </div>
                 </header>
                 <section className='main-post-content-main'>
                     <div className='main-post-content'>

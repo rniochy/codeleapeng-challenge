@@ -11,7 +11,11 @@ function App() {
    return (
             <>
               { logged ?
-               <Main/> : 
+                <Main 
+                    setLogged={setLogged}
+                    setName={setName}
+                /> 
+                : 
                 <Signup 
                       logged ={logged} 
                       setLogged={setLogged} 
