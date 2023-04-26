@@ -7,6 +7,7 @@ import PostItem from '../../components/postItem';
 import EditItem from '../../components/editItem';
 import DeleteItem from '../../components/deleteItem';
 import store from '../../redux/store';
+import fetchData from '../../actions/data'
 import './main.css';
 
 const Main = ({setLogged, setName}) => {
@@ -16,6 +17,7 @@ const Main = ({setLogged, setName}) => {
      const {cancel, edite, delete_} = store.getState();
 
     useEffect(()=>{
+       
     }, [update])
 
     const logoutHandler = () => {
@@ -32,8 +34,8 @@ const Main = ({setLogged, setName}) => {
 
     };
     const createPostHandler = () =>{
-        // console.log(title, content)
-
+        
+        setUpdate(e=>!e);
     } 
     return (
         <div className='main-content'>
