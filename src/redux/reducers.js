@@ -17,6 +17,14 @@ export default function reducer(store = [], action){
             return {
                 ...store, cancel: action.payload.cancel
             }
+        case actions.DELETE:
+            return {
+                ...store, delete_: action.payload.delete_
+            }
+        case actions.EDITE:
+            return {
+                ...store, edite: action.payload.edite
+            }
     }
     return store;
 }

@@ -12,11 +12,11 @@ import './main.css';
 const Main = () => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
-     const [update, setUpdate] = useState();
+     const [update, setUpdate] = useState(false);
      const {cancel, edite, delete_} = store.getState();
 
     useEffect(()=>{
-        console.log(edite, delete_);
+        console.log(edite, delete_, update);
     }, [update])
 
     const inputTextTitleHandler = (e)=>{
@@ -33,10 +33,12 @@ const Main = () => {
     } 
     return (
         <div className='main-content'>
-                <div className='manege-actins-detele-edite'>
-                    { !cancel && <DeleteItem  setUpdate={setUpdate}/> }
-                   {/* {!cancel && <EditItem setUpdate={setUpdate}  />} */}
-                </div>
+               {
+                   (edite) && <div className='manege-actins-detele-edite'>
+                        { (!cancel && delete_) && <DeleteItem  setUpdate={setUpdate}/> }
+                        {(!cancel && edite) && <EditItem setUpdate={setUpdate}  />}
+                    </div>
+                }
                 <header>
                     <h1>CodeLeap Network</h1>
                 </header>
@@ -77,9 +79,10 @@ const Main = () => {
                         />
                     </div>    
                 </section>
-                <PostItem />
-                <PostItem />
-                <PostItem />
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+                <PostItem setupdate ={setUpdate}/>
+      
             </div>
     );
 }

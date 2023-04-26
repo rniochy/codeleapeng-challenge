@@ -1,26 +1,25 @@
 import React from 'react';
-import './post.css';
-// AiTwotoneDelete AiOutlineDelete FiEdit
-import {AiOutlineDelete} from 'react-icons/ai'
-import {FiEdit} from 'react-icons/fi'
-import Delete from '../deleteItem';
+import * as actions from '../../actions/actions';
+import {AiOutlineDelete} from 'react-icons/ai';
+import {FiEdit} from 'react-icons/fi';
 import store from '../../redux/store';
+import './post.css';
 
-const PostItem = () => {
+const PostItem = ({setupdate}) => {
 
     const editeHandler = () =>{
         store.dispatch({
             type: actions.EDITE,
             payload: {edite: true }
         }); 
-        
+        setupdate(true);
     }
     const deleteHandler = () =>{
         store.dispatch({
             type: actions.DELETE,
             payload: {delete: true}
         });
-
+        setupdate(true);
     }
     return  <article className='content-post-item'>
                 <div className='content-post-border'>

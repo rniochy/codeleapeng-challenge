@@ -3,13 +3,13 @@ import './delete.css'
 import Button from '../button';
 import Label from '../label';
 import store from '../../redux/store';
-import * as actions from '../../actions/actions';
+import {CANCEL} from '../../actions/actions';
 
 const DeleteItem = ({setUpdate}) => {
 
     const cancelHandler = () =>{
         store.dispatch({
-            type: actions.CANCEL,
+            type: CANCEL,
             payload: {cancel: true }
         }); 
         setUpdate(true);
