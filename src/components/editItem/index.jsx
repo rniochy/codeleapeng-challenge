@@ -18,9 +18,13 @@ const EditItem = ({setUpdate}) => {
     const cancelHandler = () =>{
         store.dispatch({
             type: actions.CANCEL,
-            payload: {cancel: true }
+            payload: {
+                cancel: true,
+                delte_:false,
+                edite:false
+            }
         }); 
-        setUpdate(true);
+        setUpdate(e=>!e);
     }
     return (
             <div className='edit-item-content'>

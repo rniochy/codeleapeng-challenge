@@ -12,7 +12,8 @@ const PostItem = ({setupdate}) => {
             type: actions.EDITE,
             payload: {
                 edite: true,
-                delete_:false
+                delete_:false,
+                cancel: false
              }
         }); 
         setupdate(e=>!e);
