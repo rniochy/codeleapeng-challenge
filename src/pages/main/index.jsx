@@ -16,7 +16,7 @@ const Main = () => {
      const {cancel, edite, delete_} = store.getState();
 
     useEffect(()=>{
-        console.log(edite, delete_);
+        console.log(edite, delete_, cancel);
     }, [update])
 
     const inputTextTitleHandler = (e)=>{

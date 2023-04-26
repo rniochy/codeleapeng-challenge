@@ -22,7 +22,8 @@ const PostItem = ({setupdate}) => {
             type: actions.DELETE,
             payload: {
                 delete_: true,
-                edite: false
+                edite: false,
+                cancel: false
             }
         });
         setupdate(e=>!e);
