@@ -8,7 +8,6 @@ import EditItem from '../../components/editItem';
 import DeleteItem from '../../components/deleteItem';
 import store from '../../redux/store';
 import fetchData from '../../actions/data';
-
 import './main.css';
 
 const Main = ({setLogged, setName}) => {
@@ -17,7 +16,20 @@ const Main = ({setLogged, setName}) => {
      const [update, setUpdate] = useState(false);
      const {cancel, edite, delete_, results, id, name} = store.getState();
 
+
     useEffect(()=>{
+        (async()=>{
+            const res = await fetchData();
+            const {results} = res.data;
+            store.dispatch({
+                type: actions.CANCEL,
+                payload: {
+                    cancel: true,
+                    delte_:false,
+                    edite:false
+                }
+            });
+        })();
        
     }, [update])
 

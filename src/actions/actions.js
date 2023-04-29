@@ -4,3 +4,4 @@ export const CANCEL = "cancel";
 export const EDITE = "edite";
 export const DELETE = "delete";
 export const CREATE = "create";
+export const UPDATE = "update";

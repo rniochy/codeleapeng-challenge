@@ -8,6 +8,7 @@ import fetchData from '../../actions/data';
 
 const DeleteItem = ({setUpdate}) => {
    const {id} = store.getState();
+   
     const cancelHandler = () =>{
         store.dispatch({
             type: CANCEL,

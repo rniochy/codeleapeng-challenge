@@ -21,7 +21,7 @@ export default function reducer(store = [], action){
                  delete_,
                  edite,
                  results,
-                 id: results[0].id
+                 id:0
             }
         case actions.CANCEL:
             return {
@@ -45,11 +45,11 @@ export default function reducer(store = [], action){
                 delete_: action.payload.delete_,
                 cancel: action.payload.cancel
             }
-        // case actions.CREATE:
-        //     return {
-        //         ...store, 
-        //         id: action.payload.id,
-        //     }
+        case actions.UPDATE:
+            return {
+                ...store, 
+                 results: action.payload.results
+            }
     }
     return store;
 }

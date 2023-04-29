@@ -7,6 +7,7 @@ import './post.css';
 import fetchData from '../../actions/data';
 
 const PostItem = ({setupdate, post, index}) => {
+    const {name} = store.getState();
 
     const editeHandler = () =>{
         store.dispatch({
@@ -37,15 +38,21 @@ const PostItem = ({setupdate, post, index}) => {
     return  <article className='content-post-item'>
                 <div className='content-post-border'>
                     <div className='header-post-item'>
-                        <h2>My first Post at CodeLeap Network</h2>
-                        <div className='header-post-item-icons'>
-                            <span onClick={deleteHandler}>
-                                <AiOutlineDelete/>
-                            </span>
-                            <span onClick={editeHandler}>
-                                <FiEdit/>
-                            </span>
-                        </div>
+                        <h2>Post on CodeLeap Network</h2>
+
+                          { name === post.uername ? 
+                                <div className='header-post-item-icons'>
+                                    <span 
+                                        onClick={deleteHandler}
+                                    >
+                                            <AiOutlineDelete/>
+                                    </span>
+                                    <span 
+                                        onClick={editeHandler}
+                                        >
+                                            <FiEdit/>
+                                    </span>  
+                                </div> : ''}
                     </div>
                     <div className='body-post-item'>
                         <div className='body-post-header'>
