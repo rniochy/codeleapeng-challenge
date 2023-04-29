@@ -4,10 +4,24 @@ import Button from '../button';
 import Label from '../label';
 import store from '../../redux/store';
 import {CANCEL} from '../../actions/actions';
+import fetchData from '../../actions/data';
 
 const DeleteItem = ({setUpdate}) => {
-
+   const {id} = store.getState();
     const cancelHandler = () =>{
+        store.dispatch({
+            type: CANCEL,
+            payload: {
+                cancel: true,
+                delete_:false,
+                edite: false
+             }
+        }); 
+        setUpdate(e=>!e);
+    }
+    const deleteHandler =  async () =>{
+        const res = await fetchData.delete(`/${id}/`);
+        console.log(res)
         store.dispatch({
             type: CANCEL,
             payload: {
@@ -32,7 +46,13 @@ const DeleteItem = ({setUpdate}) => {
                         eventClick = {cancelHandler} 
                     />
                 </span>
-               <span> <Button ableButton={false} name="Delete" classButton="delete"/></span>
+                <span> <Button 
+                        ableButton={false} 
+                        name="Delete" 
+                        classButton="delete"
+                        eventClick = {deleteHandler}
+                        />
+                 </span>
              </div> 
         </div>
     );

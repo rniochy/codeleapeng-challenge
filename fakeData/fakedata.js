@@ -1,4 +1,4 @@
-{
+const data = [{
 	"count": 49,
 	"next": "https://dev.codeleap.co.uk/careers/?limit=10&offset=10",
 	"previous": null,
@@ -74,4 +74,6 @@
 			"content": "asdasafsagsedtsady"
 		}
 	]
-}
+} ]
+
+export default data;

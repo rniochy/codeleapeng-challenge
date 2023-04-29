@@ -3,3 +3,4 @@ export const LOGOUT = "user_logout";
 export const CANCEL = "cancel";
 export const EDITE = "edite";
 export const DELETE = "delete";
+export const CREATE = "create";

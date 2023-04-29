@@ -7,14 +7,15 @@ import PostItem from '../../components/postItem';
 import EditItem from '../../components/editItem';
 import DeleteItem from '../../components/deleteItem';
 import store from '../../redux/store';
-import fetchData from '../../actions/data'
+import fetchData from '../../actions/data';
+
 import './main.css';
 
 const Main = ({setLogged, setName}) => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
      const [update, setUpdate] = useState(false);
-     const {cancel, edite, delete_} = store.getState();
+     const {cancel, edite, delete_, results, id, name} = store.getState();
 
     useEffect(()=>{
        
@@ -33,8 +34,19 @@ const Main = ({setLogged, setName}) => {
         setContent(e.target.value);
 
     };
-    const createPostHandler = () =>{
-        
+    const createPostHandler = async () =>{
+        if(title && content){
+            const obj = {
+                username: name,
+                created_datetime: new Date(),
+                content,
+                title
+            };
+            const res = await fetchData.post("/",
+                obj
+            )
+            console.log(res)
+        } 
         setUpdate(e=>!e);
     } 
     return (
@@ -96,16 +108,11 @@ const Main = ({setLogged, setName}) => {
                         />
                     </div>    
                 </section>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
-                <PostItem setupdate ={setUpdate}/>
+
+                {
+                    results.map((post, index)=> <PostItem key={post.id} post={post}  setupdate ={setUpdate}/> )
+                    
+                }
       
             </div>
     );

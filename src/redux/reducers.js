@@ -1,5 +1,13 @@
 import * as actions from '../actions/actions';
+// import results from '../../fakeData/fakedata'
+import fetchData from '../actions/data';
 
+
+ const {data} = await fetchData()
+ 
+// const {data} = getdata
+const {results} = data
+console.log(results)
 export default function reducer(store = [], action){
 
     switch(action.type){
@@ -11,7 +19,9 @@ export default function reducer(store = [], action){
                  logged,
                  cancel,
                  delete_,
-                 edite
+                 edite,
+                 results,
+                 id: results[0].id
             }
         case actions.CANCEL:
             return {
@@ -25,7 +35,8 @@ export default function reducer(store = [], action){
                 ...store, 
                 delete_: action.payload.delete_,
                 edite: action.payload.edite,
-                cancel: action.payload.cancel
+                cancel: action.payload.cancel,
+                id: action.payload.id
             }
         case actions.EDITE:
             return {
@@ -34,6 +45,11 @@ export default function reducer(store = [], action){
                 delete_: action.payload.delete_,
                 cancel: action.payload.cancel
             }
+        // case actions.CREATE:
+        //     return {
+        //         ...store, 
+        //         id: action.payload.id,
+        //     }
     }
     return store;
 }

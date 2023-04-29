@@ -1,8 +1,4 @@
 import axios from 'axios'
-import data from '../../fakeData/fakedata.json'
 
-// const baseURL = process.env.BaseURL;
-
-const fetchData = axios.create({baseURL: data});
-
+const fetchData = axios.create({ baseURL: "https://dev.codeleap.co.uk/careers/" });
 export default fetchData;

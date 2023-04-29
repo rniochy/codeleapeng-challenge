@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import store from '../../redux/store';
 import Button from '../button';
 import Label from '../label';
@@ -6,16 +6,39 @@ import FormTitle from '../formTitle';
 import InputText from '../inputText';
 import * as actions from '../../actions/actions';
 import './edit.css'
+import fetchData from '../../actions/data';
 
 const EditItem = ({setUpdate}) => {
+    const [title, setTitle] = useState();
+    const [content, setContent] = useState();
+    const {id} = store.getState();
      
-    const inputTextContentHandler = () => {
+    const inputTextContentHandler = (e) => {
+        setContent(e.target.value);
+        console.log(content)
          
     }
-    const inputTextTitleHandler = () => {
-
+    const inputTextTitleHandler = (e) => {
+        setTitle(e.target.value);
+        console.log(title)
+         
     }
     const cancelHandler = () =>{
+        store.dispatch({
+            type: actions.CANCEL,
+            payload: {
+                cancel: true,
+                delte_:false,
+                edite:false
+            }
+        }); 
+        setUpdate(e=>!e);
+    }
+    const editeHandler = async () =>{
+        const res = await fetchData(`/${id}/`,{
+            title, content
+        });
+        console.log(res);
         store.dispatch({
             type: actions.CANCEL,
             payload: {
@@ -73,6 +96,7 @@ const EditItem = ({setUpdate}) => {
                             ableButton={false} 
                             name="Save" 
                             classButton="save"
+                            eventClick = {editeHandler}
                     /></span>
                 </div> 
             </div>

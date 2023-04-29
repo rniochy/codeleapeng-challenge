@@ -4,8 +4,9 @@ import {AiOutlineDelete} from 'react-icons/ai';
 import {FiEdit} from 'react-icons/fi';
 import store from '../../redux/store';
 import './post.css';
+import fetchData from '../../actions/data';
 
-const PostItem = ({setupdate}) => {
+const PostItem = ({setupdate, post, index}) => {
 
     const editeHandler = () =>{
         store.dispatch({
@@ -18,15 +19,19 @@ const PostItem = ({setupdate}) => {
         }); 
         setupdate(e=>!e);
     }
-    const deleteHandler = () =>{
+    const deleteHandler = async () =>{
         store.dispatch({
             type: actions.DELETE,
             payload: {
                 delete_: true,
                 edite: false,
-                cancel: false
+                cancel: false,
+                id: post.id
             }
         });
+         console.log("")
+    // const res = await fetchData.patch(`/${post.id}`, 8, {headers:{"Accept":"application/json, text/plain, /","Content-Type": "multipart/form-data"}})
+    // console.log(res)
         setupdate(e=>!e);
     }
     return  <article className='content-post-item'>
@@ -44,12 +49,12 @@ const PostItem = ({setupdate}) => {
                     </div>
                     <div className='body-post-item'>
                         <div className='body-post-header'>
-                            <span>@Rodrigo</span>
+                            <span>{`@${post.username}`}</span>
                             <span>25 minutes ago</span>
                         </div>
                         <div className='content-post'>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, earum incidunt quos adipisci at doloremque delectus expedita, consequuntur illo velit fugiat aspernatur voluptatum maxime laboriosam et tenetur voluptates accusantium! Velit.
+                                    {post.content}    
                             </p>
                         </div>
                     </div>
