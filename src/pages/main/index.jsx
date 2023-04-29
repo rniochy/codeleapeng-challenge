@@ -22,11 +22,9 @@ const Main = ({setLogged, setName}) => {
             const res = await fetchData();
             const {results} = res.data;
             store.dispatch({
-                type: actions.CANCEL,
+                type: actions.UPDATE``,
                 payload: {
-                    cancel: true,
-                    delte_:false,
-                    edite:false
+                    results
                 }
             });
         })();

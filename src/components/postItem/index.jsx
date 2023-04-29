@@ -30,7 +30,6 @@ const PostItem = ({setupdate, post, index}) => {
                 id: post.id
             }
         });
-         console.log("")
     // const res = await fetchData.patch(`/${post.id}`, 8, {headers:{"Accept":"application/json, text/plain, /","Content-Type": "multipart/form-data"}})
     // console.log(res)
         setupdate(e=>!e);
