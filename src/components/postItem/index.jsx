@@ -6,7 +6,7 @@ import store from '../../redux/store';
 import './post.css';
 import fetchData from '../../actions/data';
 
-const PostItem = ({setupdate, post, index}) => {
+const PostItem = ({setupdate, post}) => {
     const {name} = store.getState();
 
     const editeHandler = () =>{
@@ -15,7 +15,8 @@ const PostItem = ({setupdate, post, index}) => {
             payload: {
                 edite: true,
                 delete_:false,
-                cancel: false
+                cancel: false,
+                id: post.id
              }
         }); 
         setupdate(e=>!e);
@@ -34,12 +35,13 @@ const PostItem = ({setupdate, post, index}) => {
     // console.log(res)
         setupdate(e=>!e);
     }
+   
     return  <article className='content-post-item'>
                 <div className='content-post-border'>
                     <div className='header-post-item'>
                         <h2>Post on CodeLeap Network</h2>
 
-                          { name === post.uername ? 
+                          { name === post.username ? 
                                 <div className='header-post-item-icons'>
                                     <span 
                                         onClick={deleteHandler}
