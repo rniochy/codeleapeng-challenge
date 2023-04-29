@@ -21,7 +21,6 @@ export default function reducer(store = [], action){
                  delete_,
                  edite,
                  results,
-                 id:0
             }
         case actions.CANCEL:
             return {
@@ -43,7 +42,8 @@ export default function reducer(store = [], action){
                 ...store, 
                 edite: action.payload.edite,
                 delete_: action.payload.delete_,
-                cancel: action.payload.cancel
+                cancel: action.payload.cancel,
+                id: action.payload.id
             }
         case actions.UPDATE:
             return {

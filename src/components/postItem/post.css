@@ -51,6 +51,7 @@
 .content-post p {
      text-align: justify;
      font-size: 12pt;
+     overflow: hidden;
 }
 
 @media screen and (min-width: 200px) and  (max-width:768px)  {
