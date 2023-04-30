@@ -2,7 +2,6 @@ import { useState } from 'react';
 import store from './redux/store';
 import Signup from '../src/pages/signup';
 import Main from './pages/main';
-import './App.css';
 
 function App() {
   const [logged, setLogged] = useState(false);

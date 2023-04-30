@@ -1,19 +1,14 @@
 import * as actions from '../actions/actions';
-// import results from '../../fakeData/fakedata'
+import result from '../../fakeData/fakedata'
 import fetchData from '../actions/data';
 
+// const {data} = await fetchData.get("/");
+// const {results, next, previous} = data;
 
-
-
-
-const {data} = await fetchData.get("/");
-const {results, next, previous} = data;
-
-console.log(next, previous)
-
+// console.log(next, previous)
+const {results} = result
 
 export default function reducer(store = [], action){
-  
 
     switch(action.type){
         case actions.LOGIN:
@@ -26,8 +21,8 @@ export default function reducer(store = [], action){
                  delete_,
                  edite,
                  results,
-                 next,
-                 previous
+                 next:"REMOVER ESSE TEXTO",
+                 previous:"REMOVER ESSE TEXTO"
             }
         case actions.CANCEL:
             return {

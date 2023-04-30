@@ -12,7 +12,7 @@ button:hover {
      cursor: pointer;
 }
 .enter:hover {
-    background-color: rgba(99, 135, 237, 0.8);
+    background-color: var(--primary-color);
 }
 
 .enter:disabled {
@@ -70,5 +70,5 @@ button:hover {
         width: 90px;
         height: 26px;
         font-size: 9pt;
-}
+     }
 }

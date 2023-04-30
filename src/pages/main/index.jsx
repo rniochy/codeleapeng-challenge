@@ -132,11 +132,18 @@ const Main = ({setLogged, setName}) => {
                 </section>
 
                 {   
-                    <Pagination next={next} previous={previous} setUpdate={setUpdate}>
-                       { results.map((post)=> <PostItem 
-                                                key={post.id} 
-                                                post={post}  
-                                                setupdate ={setUpdate}/> )
+                    <Pagination 
+                        next={next} 
+                        previous={previous} 
+                        setUpdate={setUpdate}
+                    >
+                       { 
+                            results.map((post)=> <PostItem 
+                                                    key={post.id} 
+                                                    post={post}  
+                                                    setupdate ={setUpdate}
+                                                 />
+                                         )
                         }
                     </Pagination>
                     
