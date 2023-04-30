@@ -57,6 +57,11 @@ button:hover {
       border: 1px solid rgba(99, 135, 237, .8);;
       color: rgba(99, 135, 237);
 }
+.bt-pagination:first-child:disabled,
+.bt-pagination:last-child:disabled {
+      color:  #777777;
+      border: 1px solid #777777;
+}
 .bt-pagination:hover {
       color:  rgba(99, 135, 237, .8);
 }

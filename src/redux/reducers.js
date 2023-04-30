@@ -7,7 +7,9 @@ import fetchData from '../actions/data';
 
 
 const {data} = await fetchData.get("/");
-const {results} = data;
+const {results, next, previous} = data;
+
+console.log(next, previous)
 
 
 export default function reducer(store = [], action){
@@ -24,6 +26,8 @@ export default function reducer(store = [], action){
                  delete_,
                  edite,
                  results,
+                 next,
+                 previous
             }
         case actions.CANCEL:
             return {
@@ -51,7 +55,9 @@ export default function reducer(store = [], action){
         case actions.UPDATE:
             return {
                 ...store, 
-                 results: action.payload.results
+                 results: action.payload.results,
+                 next: action.payload.next,
+                 previous: action.payload.previous
             }
     }
     return store;

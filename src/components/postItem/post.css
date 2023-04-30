@@ -23,10 +23,14 @@
       justify-content: space-between;
       margin: 1rem 1rem 0 1rem;
       transition: all 500ms ease-in-out;
+      font-size: 22px;     
+      font-weight: bolder;
  }
-.header-post-item-icons { 
-    font-size: 22px;     
-    font-weight: bolder;
+.header-post-item-icons span:first-child:hover { 
+    color:#FF5151;
+}
+.header-post-item-icons span:last-child:hover { 
+    color:#0fdd3c;
 }
 .header-post-item-icons span:hover { 
     font-size: 24px;     

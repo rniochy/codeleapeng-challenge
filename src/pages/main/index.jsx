@@ -16,7 +16,15 @@ const Main = ({setLogged, setName}) => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
      const [update, setUpdate] = useState(false);
-     const {cancel, edite, delete_, results, name} = store.getState();
+     const {
+        cancel, 
+        edite, 
+        delete_, 
+        results, 
+        name,
+        next,
+        previous
+        } = store.getState();
 
 
     useEffect(()=>{
@@ -59,10 +67,7 @@ const Main = ({setLogged, setName}) => {
                 created_datetime: new Date(),
                 content,
                 title
-            }
-               
-            )
-            console.log(res )
+            })
         } 
         setUpdate(e=>!e);
     } 
@@ -127,7 +132,7 @@ const Main = ({setLogged, setName}) => {
                 </section>
 
                 {   
-                    <Pagination>
+                    <Pagination next={next} previous={previous} setUpdate={setUpdate}>
                        { results.map((post)=> <PostItem 
                                                 key={post.id} 
                                                 post={post}  
