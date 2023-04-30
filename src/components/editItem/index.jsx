@@ -33,9 +33,10 @@ const EditItem = ({setUpdate}) => {
         setUpdate(e=>!e);
     }
     const editeHandler = async () =>{
-        const res = await fetchData.patch(`/${id}/`,{
-            title, content
-        });
+        const oj = {title, content}
+        const res = await fetchData.patch(`/${id}/`,
+             oj
+        );
         console.log(res);
         store.dispatch({
             type: actions.CANCEL,

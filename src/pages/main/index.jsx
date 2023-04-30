@@ -54,10 +54,10 @@ const Main = ({setLogged, setName}) => {
             };
             const res = await fetchData.post("/",
             {
-                username: "name",
+                username: name,
                 created_datetime: new Date(),
-                content:"content",
-                title:"title"
+                content,
+                title
             }
                
             )
