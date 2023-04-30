@@ -3,11 +3,9 @@ import * as actions from '../actions/actions';
 import fetchData from '../actions/data';
 
 
- const {data} = await fetchData()
- 
-// const {data} = getdata
-const {results} = data
-console.log(results)
+ const {data} = await fetchData.get("/");
+ const {results} = data;
+
 export default function reducer(store = [], action){
 
     switch(action.type){

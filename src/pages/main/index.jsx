@@ -22,7 +22,7 @@ const Main = ({setLogged, setName}) => {
             const res = await fetchData();
             const {results} = res.data;
             store.dispatch({
-                type: actions.UPDATE``,
+                type: actions.UPDATE,
                 payload: {
                     results
                 }
@@ -49,15 +49,21 @@ const Main = ({setLogged, setName}) => {
             const obj = {
                 username: name,
                 created_datetime: new Date(),
-                content,
-                title
+                content:content,
+                title:title
             };
             const res = await fetchData.post("/",
-                obj
+            {
+                username: "name",
+                created_datetime: new Date(),
+                content:"content",
+                title:"title"
+            }
+               
             )
-            console.log(res)
+            console.log(res )
         } 
-        setUpdate(e=>!e);
+        // setUpdate(e=>!e);
     } 
     return (
         <div className='main-content'>

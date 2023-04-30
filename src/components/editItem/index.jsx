@@ -15,12 +15,10 @@ const EditItem = ({setUpdate}) => {
      
     const inputTextContentHandler = (e) => {
         setContent(e.target.value);
-        console.log(content)
          
     }
     const inputTextTitleHandler = (e) => {
         setTitle(e.target.value);
-        console.log(title)
          
     }
     const cancelHandler = () =>{
@@ -35,7 +33,7 @@ const EditItem = ({setUpdate}) => {
         setUpdate(e=>!e);
     }
     const editeHandler = async () =>{
-        const res = await fetchData(`/${id}/`,{
+        const res = await fetchData.patch(`/${id}/`,{
             title, content
         });
         console.log(res);
