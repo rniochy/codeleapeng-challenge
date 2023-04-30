@@ -67,7 +67,7 @@ const Main = ({setLogged, setName}) => {
                 created_datetime: new Date(),
                 content,
                 title
-            })
+            })  
         } 
         setUpdate(e=>!e);
     } 
