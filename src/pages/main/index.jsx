@@ -8,18 +8,20 @@ import EditItem from '../../components/editItem';
 import DeleteItem from '../../components/deleteItem';
 import store from '../../redux/store';
 import fetchData from '../../actions/data';
+import * as actions from '../../actions/actions';
 import './main.css';
+import Pagination from '../../components/pagination';
 
 const Main = ({setLogged, setName}) => {
      const [title, setTitle] = useState();
      const [content, setContent] = useState();
      const [update, setUpdate] = useState(false);
-     const {cancel, edite, delete_, results, id, name} = store.getState();
+     const {cancel, edite, delete_, results, name} = store.getState();
 
 
     useEffect(()=>{
-        (async()=>{
-            const res = await fetchData();
+        setTimeout(async()=>{
+            const res = await fetchData.get('/');
             const {results} = res.data;
             store.dispatch({
                 type: actions.UPDATE,
@@ -27,9 +29,8 @@ const Main = ({setLogged, setName}) => {
                     results
                 }
             });
-        })();
-       
-    }, [update])
+            }, 1000)
+    }, [update]);
 
     const logoutHandler = () => {
         setLogged(e=>!e);
@@ -63,7 +64,7 @@ const Main = ({setLogged, setName}) => {
             )
             console.log(res )
         } 
-        // setUpdate(e=>!e);
+        setUpdate(e=>!e);
     } 
     return (
         <div className='main-content'>
@@ -125,8 +126,14 @@ const Main = ({setLogged, setName}) => {
                     </div>    
                 </section>
 
-                {
-                    results.map((post, index)=> <PostItem key={post.id} post={post}  setupdate ={setUpdate}/> )
+                {   
+                    <Pagination>
+                       { results.map((post)=> <PostItem 
+                                                key={post.id} 
+                                                post={post}  
+                                                setupdate ={setUpdate}/> )
+                        }
+                    </Pagination>
                     
                 }
       

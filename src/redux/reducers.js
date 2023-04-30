@@ -3,10 +3,15 @@ import * as actions from '../actions/actions';
 import fetchData from '../actions/data';
 
 
- const {data} = await fetchData.get("/");
- const {results} = data;
+
+
+
+const {data} = await fetchData.get("/");
+const {results} = data;
+
 
 export default function reducer(store = [], action){
+  
 
     switch(action.type){
         case actions.LOGIN:
