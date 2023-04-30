@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../button';
+import './pagination.css'
 
 const Pagination = ({children}) => {
     const nextPageHandler = () => {
@@ -12,8 +13,8 @@ const Pagination = ({children}) => {
         <div>
              {children}
              <div className="pagination-content">
-                <Button eventClick={nextPageHandler} ableButton={true} name="Previous Page" classButton="bt-pagination"/>
-                <Button eventClick={nextPageHandler} ableButton={true} name="Next Page" classButton="bt-pagination" />
+                <Button eventClick={nextPageHandler} ableButton={false} name="Previous Page" classButton="bt-pagination"/>
+                <Button eventClick={nextPageHandler} ableButton={false} name="Next Page" classButton="bt-pagination" />
              </div>
         </div>
     );

@@ -53,7 +53,13 @@ button:hover {
 .cancel:hover {
      color: rgba(0, 0, 0, .7);
 }
-
+.bt-pagination {
+      border: 1px solid rgba(99, 135, 237, .8);;
+      color: rgba(99, 135, 237);
+}
+.bt-pagination:hover {
+      color:  rgba(99, 135, 237, .8);
+}
 @media screen and (max-width:768px) { 
     button {
         width: 90px;
