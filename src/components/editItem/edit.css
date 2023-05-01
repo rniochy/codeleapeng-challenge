@@ -4,7 +4,8 @@
     width: 600px;
     height: fit-content;
     border-radius: 16px;
-    margin: .6rem;
+    margin: 50vh .6rem;
+    position: fixed;
 }
 .edit-item-buttons {
     display: flex;
