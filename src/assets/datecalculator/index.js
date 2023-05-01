@@ -29,12 +29,12 @@ export default function dateDiffCalculator(postDate_){
                     return diffofpost(31,DayPost,DayAtual);
 
     } else if(isNotEquals(HourAtual, HourPost)){
-               if( HourPost >= MinutesAtua){
+               if( (MinutesAtual - MinutesPost)>=0){
                     return `${(HourAtual-HourPost)+1} hour(s) ago.`;
                }else 
                     return `${HourAtual-HourPost} hour(s) ago.`;
            
-    }  else if(isNotEquals(MinutesAtual, MinutesPost )){
+    }  else if(isNotEquals(MinutesAtual, MinutesPost) && MinutesAtual > MinutesPost){
      return `${MinutesAtual - MinutesPost} minute(s) ago.`; 
     } else {
         return `${SecondsPost} second(s) ago.`;

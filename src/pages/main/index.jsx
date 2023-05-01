@@ -136,7 +136,7 @@ const Main = ({setLogged, setName}) => {
                         setUpdate={setUpdate}
                     >
                        { 
-                            results.map((post)=> <PostItem 
+                            results.sort((a, b)=> a.created_datetime -b.created_datetime).map((post )=> <PostItem 
                                                     key={post.id} 
                                                     post={post}  
                                                     setupdate ={setUpdate}
