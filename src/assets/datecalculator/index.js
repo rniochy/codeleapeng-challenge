@@ -34,40 +34,7 @@ export default function dateDiffCalculator(postDate_){
      return `${MinutesAtual-MinutesPost} minute(s) ago.`; 
     } else {
         return `${SecondsPost} second(s) ago.`;
-    }
-
-    
-//     const dateDiff = atualDate - postDate;
-    
-//     console.log(atualDate, postDate/1000)
-//     const timeInOneSecond = 1000; 
-//     const timeInOneMinutes = 1000 * 60; 
-//     const timeInOneHour = (1000 * 60* 60); 
-//     const timeInOneDay = 1000 * 60* 60*  24; 
-//     const timeInOneWeek = 1000 * 60* 60* 24*7; 
-//     const timeInOneYear = (1000 * 60* 60* 24*365); 
-
-//     const dateDiffSecond = Math.floor(dateDiff/(timeInOneSecond));
-//     const dateDiffMinutes = Math.floor(dateDiff/(timeInOneMinutes));
-//     const dateDiffHour = Math.floor(dateDiff/(timeInOneHour));
-//     const dateDiffDay = Math.ceil(dateDiff/(timeInOneDay));
-//     const dateDiffWeek = Math.floor(dateDiff/( 1000 * 60* 60* 24*7));
-//     const dateDiffYear = Math.floor(dateDiff/(timeInOneYear));
-
-//     if(dateDiffYear > 0)
-//         return `${dateDiffYear} Year(s) ago`;
-//     else if(dateDiffWeek > 0 )
-//          return `${dateDiffWeek} Week(s) ago`;
-//     else if(dateDiffDay > 0 )
-//          return `${dateDiffDay} Day(s) ago`;
-//     else if(dateDiffHour > 0 )
-//          return `${dateDiffHour} Hour(s) ago`;
-//     else if(dateDiffMinutes > 0 )
-//          return `${dateDiffMinutes} Hour(s) ago`;
-//     else if(dateDiffSecond > 0 )
-//          return `${dateDiffSecond} Hour(s) ago`;
-//          else 
-//             return "Posted just now";    
+    }   
 }
 
 const isEvenMoth=(month)=>{

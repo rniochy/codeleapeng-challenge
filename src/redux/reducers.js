@@ -2,11 +2,13 @@ import * as actions from '../actions/actions';
 import result from '../../fakeData/fakedata'
 import fetchData from '../actions/data';
 
-// const {data} = await fetchData.get("/");
-// const {results, next, previous} = data;
+const {data} = await fetchData.get("/");
 
-// console.log(next, previous)
-const {results} = result
+
+const {results, next, previous} = data;
+
+console.log(next, previous)
+// const {results} = result
 
 export default function reducer(store = [], action){
 
@@ -21,8 +23,8 @@ export default function reducer(store = [], action){
                  delete_,
                  edite,
                  results,
-                 next:"REMOVER ESSE TEXTO",
-                 previous:"REMOVER ESSE TEXTO"
+                 next:next,
+                 previous:previous
             }
         case actions.CANCEL:
             return {
