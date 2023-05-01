@@ -5,7 +5,7 @@ import {FiEdit} from 'react-icons/fi';
 import store from '../../redux/store';
 import './post.css';
 import fetchData from '../../actions/data';
-import dataDiffCalculator from '../../assets/datacalculator';
+import dateDiffCalculator from '../../assets/datecalculator';
 
 const PostItem = ({setupdate, post}) => {
     const {name} = store.getState();
@@ -56,7 +56,7 @@ const PostItem = ({setupdate, post}) => {
                     <div className='body-post-item'>
                         <div className='body-post-header'>
                             <span>{`@${post.username}`}</span>
-                            <span>{dataDiffCalculator(post.created_datetime)}</span>
+                            <span>{dateDiffCalculator(post.created_datetime)}</span>
                         </div>
                         <div className='content-post'>
                             <p>
