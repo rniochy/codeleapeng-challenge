@@ -1,14 +1,8 @@
 import * as actions from '../actions/actions';
-import result from '../../fakeData/fakedata'
 import fetchData from '../actions/data';
 
 const {data} = await fetchData.get("/");
-
-
 const {results, next, previous} = data;
-
-console.log(next, previous)
-// const {results} = result
 
 export default function reducer(store = [], action){
 

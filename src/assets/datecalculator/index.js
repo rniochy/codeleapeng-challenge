@@ -4,8 +4,8 @@ export default function dateDiffCalculator(postDate_){
 
     const YearAtual = atualDate.getFullYear();
     const YearPost = postDate.getFullYear();
-    const MothAtual = atualDate.getMonth();
-    const MothPost = postDate.getMonth();
+    const MonthAtual = atualDate.getMonth();
+    const MonthPost = postDate.getMonth();
     const DayAtual = atualDate.getDate();
     const DayPost = postDate.getDate();
     const HourAtual = atualDate.getHours();
@@ -17,27 +17,31 @@ export default function dateDiffCalculator(postDate_){
 
     if(isNotEquals(YearAtual,YearPost)){
          return `${YearAtual-YearPost} year(s) ago.`;
-    } else if(isNotEquals(MothAtual,MinutesPost) && DayAtual >= DayPost){
-          return `${MothAtual-MothPost} monht(s) ago.`;
+    } else if(isNotEquals(MonthAtual,MonthPost) && (DayAtual >= DayPost)){
+          return `${MonthAtual-MonthPost} monht(s) ago.`;
     } else if(isNotEquals(DayAtual, DayPost)){
           
-               if(MothPost+1 ===2)
+               if(MonthPost+1 ===2)
                     return diffofpost(28,DayPost,DayAtual);
-               else if(isEvenMoth(MothPost+1))
+               else if(isEvenMonth(MonthPost+1))
                     return diffofpost(30,DayPost,DayAtual);
                else 
                     return diffofpost(31,DayPost,DayAtual);
 
     } else if(isNotEquals(HourAtual, HourPost)){
-     return `${HourAtual-HourPost} hour(s) ago.`;
-    }  else if(isNotEquals(MinutesAtual,MinutesPost)){
-     return `${MinutesAtual-MinutesPost} minute(s) ago.`; 
+               if( HourPost >= MinutesAtua){
+                    return `${(HourAtual-HourPost)+1} hour(s) ago.`;
+               }else 
+                    return `${HourAtual-HourPost} hour(s) ago.`;
+           
+    }  else if(isNotEquals(MinutesAtual, MinutesPost )){
+     return `${MinutesAtual - MinutesPost} minute(s) ago.`; 
     } else {
         return `${SecondsPost} second(s) ago.`;
     }   
 }
 
-const isEvenMoth=(month)=>{
+const isEvenMonth=(month)=>{
      return month % 2===0
 }
 const diffofpost = (date, daypost, dayatual)=>{

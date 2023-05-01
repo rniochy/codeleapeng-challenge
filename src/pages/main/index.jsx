@@ -17,26 +17,31 @@ const Main = ({setLogged, setName}) => {
      const [content, setContent] = useState();
      const [update, setUpdate] = useState(false);
      const {
-        cancel, 
-        edite, 
-        delete_, 
-        results, 
-        name,
-        next,
-        previous
+         cancel, 
+         edite, 
+         delete_, 
+         results:result, 
+         name,
+         next,
+         previous
         } = store.getState();
+        const [results, setResults] = useState(result);
 
 
     useEffect(()=>{
+        setResults(result)
         setTimeout(async()=>{
             const res = await fetchData.get('/');
             const {results} = res.data;
             store.dispatch({
                 type: actions.UPDATE,
                 payload: {
-                    results
+                    results,
+                    next,
+                    previous
                 }
             });
+                setResults(results)
             }, 1000)
     }, [update]);
 
@@ -55,19 +60,12 @@ const Main = ({setLogged, setName}) => {
     };
     const createPostHandler = async () =>{
         if(title && content){
-            const obj = {
-                username: name,
-                created_datetime: new Date(),
-                content:content,
-                title:title
-            };
-            const res = await fetchData.post("/",
-            {
-                username: name,
-                created_datetime: new Date(),
-                content,
-                title
-            })  
+          await fetchData.post("/", {
+                    username: name,
+                    created_datetime: new Date(),
+                    content,
+                    title
+                });
         } 
         setUpdate(e=>!e);
     } 
