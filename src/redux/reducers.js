@@ -1,14 +1,11 @@
 import * as actions from '../actions/actions';
-import fetchData from '../actions/data';
-
-const {data} = await fetchData.get("/");
-const {results, next, previous} = data;
+import { getData } from '../assets/datecalculator';
 
 export default function reducer(store = [], action){
 
     switch(action.type){
         case actions.LOGIN:
-            const{ name,logged,cancel,delete_,edite} = action.payload;
+            const{ name,logged,cancel,delete_,edite,results,next,previous} = action.payload;
             return {
                  ...store, 
                  name,
@@ -17,8 +14,8 @@ export default function reducer(store = [], action){
                  delete_,
                  edite,
                  results,
-                 next:next,
-                 previous:previous
+                 next,
+                 previous
             }
         case actions.CANCEL:
             return {

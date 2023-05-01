@@ -1,4 +1,6 @@
-export default function dateDiffCalculator(postDate_){
+import fetchData from '../../actions/data';
+
+function dateDiffCalculator(postDate_){
     const atualDate = new Date();
     const postDate = new Date(postDate_);
 
@@ -50,3 +52,10 @@ const diffofpost = (date, daypost, dayatual)=>{
 const isNotEquals=(atual, daypost)=>{
      return !(atual === daypost);
 }
+
+export const getData= async () => {
+     const res = await fetchData.get("/");
+     if(!res) return;
+      return res;
+}
+export default dateDiffCalculator
