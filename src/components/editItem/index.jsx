@@ -37,7 +37,6 @@ const EditItem = ({setUpdate}) => {
         const res = await fetchData.patch(`/${id}/`,
              oj
         );
-        console.log(res);
         store.dispatch({
             type: actions.CANCEL,
             payload: {
@@ -46,6 +45,16 @@ const EditItem = ({setUpdate}) => {
                 edite:false
             }
         }); 
+        const res_ = await fetchData.get("/");
+        const {results,next:next_, previous:previous_} = res_.data;
+        store.dispatch({
+            type: actions.UPDATE,
+            payload: {
+                results,
+                next: next_,
+                previous: previous_
+            }
+        });
         setUpdate(e=>!e);
     }
     return (

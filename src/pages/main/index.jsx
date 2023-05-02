@@ -17,34 +17,29 @@ const Main = ({setLogged, setName}) => {
      const [content, setContent] = useState();
      const [update, setUpdate] = useState(false);
      const {
-         cancel, 
-         edite, 
-         delete_, 
-         results:result, 
-         name,
-         next,
-         previous
-        } = store.getState();
+            cancel, 
+            edite, 
+            delete_, 
+            results:result, 
+            name,
+            next,
+            previous
+            } = store.getState();
         const [results, setResults] = useState(result);
 
 
     useEffect(()=>{
         setResults(result)
-        console.log(next +" 1")
-        // setTimeout(async()=>{
-        //     const res = await fetchData.get('/');
-        //     const {results, next:next_} = res.data;
-        //     console.log(next_+" 2")
-        //     store.dispatch({
-        //         type: actions.UPDATE,
-        //         payload: {
-        //             results,
-        //             next:next,
-        //             previous
-        //         }
-        //     });
-        //         setResults(results)
-        //     }, 1000)
+
+        store.dispatch({
+            type: actions.UPDATE,
+            payload: {
+                results,
+                next,
+                previous
+            }
+        });
+  
     }, [update]);
 
     const logoutHandler = () => {
@@ -62,14 +57,26 @@ const Main = ({setLogged, setName}) => {
     };
     const createPostHandler = async () =>{
         if(title && content){
+            
           await fetchData.post("/", {
                     username: name,
                     created_datetime: new Date(),
                     content,
                     title
                 });
+                const res = await fetchData.get("/");
+                const {results,next:next_, previous:previous_} = res.data;
+                store.dispatch({
+                    type: actions.UPDATE,
+                    payload: {
+                        results,
+                        next: next_,
+                        previous: previous_
+                    }
+                });
         } 
-        setUpdate(e=>!e);
+         
+        setUpdate(e=>!e)
     } 
     return (
         <div className='main-content'>
