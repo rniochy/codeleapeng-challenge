@@ -7,6 +7,7 @@ import InputText from '../inputText';
 import * as actions from '../../actions/actions';
 import './edit.css'
 import fetchData from '../../actions/data';
+import updateData from '../../assets/updatedata';
 
 const EditItem = ({setUpdate}) => {
     const [title, setTitle] = useState();
@@ -45,16 +46,7 @@ const EditItem = ({setUpdate}) => {
                 edite:false
             }
         }); 
-        const res_ = await fetchData.get("/");
-        const {results,next:next_, previous:previous_} = res_.data;
-        store.dispatch({
-            type: actions.UPDATE,
-            payload: {
-                results,
-                next: next_,
-                previous: previous_
-            }
-        });
+        await  updateData();
         setUpdate(e=>!e);
     }
     return (

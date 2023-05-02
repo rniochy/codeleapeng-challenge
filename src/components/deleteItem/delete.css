@@ -19,3 +19,11 @@
 .delete-content-buttons span:first-child {
      margin-right: .3rem;
 }
+
+@media screen and (max-width: 760px) {
+     .delete-content {
+           width: 80%;
+           height: fit-content;
+           padding-bottom: 1rem;
+     }
+}

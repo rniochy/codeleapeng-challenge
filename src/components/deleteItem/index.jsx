@@ -5,7 +5,7 @@ import Label from '../label';
 import store from '../../redux/store';
 import {CANCEL} from '../../actions/actions';
 import fetchData from '../../actions/data';
-import * as actions from '../../actions/actions'
+import updateData from '../../assets/updatedata';
 
 const DeleteItem = ({setUpdate}) => {
    const {id} = store.getState();
@@ -32,16 +32,7 @@ const DeleteItem = ({setUpdate}) => {
                 edite: false
              }
         }); 
-        const res_ = await fetchData.get("/");
-        const {results,next:next_, previous:previous_} = res_.data;
-        store.dispatch({
-            type: actions.UPDATE,
-            payload: {
-                results,
-                next: next_,
-                previous: previous_
-            }
-        });
+        await updateData();
         setUpdate(e=>!e);
     }
     return (

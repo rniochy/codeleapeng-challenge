@@ -15,3 +15,11 @@
 .edit-item-buttons span:first-child {
     margin-right: .3rem;
 }
+
+@media screen and (max-width: 760px) {
+    .edit-item-content {
+          width: 80%;
+          height: fit-content;
+          padding-bottom: 1rem;
+    }
+}
