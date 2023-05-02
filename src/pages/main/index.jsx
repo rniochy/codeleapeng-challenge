@@ -30,19 +30,21 @@ const Main = ({setLogged, setName}) => {
 
     useEffect(()=>{
         setResults(result)
-        setTimeout(async()=>{
-            const res = await fetchData.get('/');
-            const {results} = res.data;
-            store.dispatch({
-                type: actions.UPDATE,
-                payload: {
-                    results,
-                    next,
-                    previous
-                }
-            });
-                setResults(results)
-            }, 1000)
+        console.log(next +" 1")
+        // setTimeout(async()=>{
+        //     const res = await fetchData.get('/');
+        //     const {results, next:next_} = res.data;
+        //     console.log(next_+" 2")
+        //     store.dispatch({
+        //         type: actions.UPDATE,
+        //         payload: {
+        //             results,
+        //             next:next,
+        //             previous
+        //         }
+        //     });
+        //         setResults(results)
+        //     }, 1000)
     }, [update]);
 
     const logoutHandler = () => {

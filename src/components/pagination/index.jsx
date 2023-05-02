@@ -9,6 +9,7 @@ const Pagination = ({children, next, previous, setUpdate}) => {
     const nextPageHandler = async () => {
         const res = await fetchData.get(`${next}`);
         const {results,next:next_, previous:previous_} = res.data;
+        
         store.dispatch({
             type: actions.UPDATE,
             payload: {
